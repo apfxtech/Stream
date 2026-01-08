@@ -1,0 +1,37 @@
+# Stream
+
+`stream` is a module used in internal projects.
+It provides an **Arduino-style** API for **Serial/WebSocket** so the same `Serial`-based code can run on multiple platforms **without code changes**.
+The repository also includes **standards and utilities** for low-level byte processing.
+
+## Features
+
+* Unified Arduino-style interface for `Serial` and `WebSocket`.
+* Run the same code across platforms without rewriting.
+* Byte-level utilities/standards (parsing, packing, conversions, etc.).
+
+## Tests:
+
+``` bash
+g++ -std=c++17 -O2 -Wall -Wextra -pedantic -I. streambuf.cpp serial.cpp test/serial.cpp -o test/serial_test
+```
+
+``` bash 
+./serial_test /dev/ttyUSB0
+```
+
+``` bash 
+./serial_test /dev/cu.usbmodemflip_Ivorzam1 > test/serial_test.log
+```
+
+## ⚠️ Branches ⚠️
+
+This repository uses two main branches:
+
+* **`main`** — stable code.
+* **`dev`** — active development.
+
+* **MAJOR** — breaking API changes.
+* **MINOR** — API changes/additions with **full backward compatibility**.
+* **PATCH** — bug fixes/improvements without API changes.
+# Stream
