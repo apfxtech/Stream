@@ -12,6 +12,7 @@ The repository also includes **standards and utilities** for low-level byte proc
 
 ## Tests:
 
+### Stream
 ``` bash
 g++ -std=c++17 -O2 -Wall -Wextra -pedantic -I. streambuf.cpp serial.cpp test/serial.cpp -o test/serial_test
 ```
@@ -24,6 +25,17 @@ g++ -std=c++17 -O2 -Wall -Wextra -pedantic -I. streambuf.cpp serial.cpp test/ser
 ./serial_test /dev/cu.usbmodemflip_Ivorzam1 > test/serial_test.log
 ```
 
+### SBU
+
+``` bash 
+gcc -std=c99 -Wall -Wextra -O0 ./test/sbu_test.c streambuf.c -I. -o ./test/test_sbu
+```
+
+``` bash 
+./test/test_sbu  
+```
+
+
 ## ⚠️ Branches ⚠️
 
 This repository uses two main branches:
@@ -34,4 +46,3 @@ This repository uses two main branches:
 * **MAJOR** — breaking API changes.
 * **MINOR** — API changes/additions with **full backward compatibility**.
 * **PATCH** — bug fixes/improvements without API changes.
-# Stream

@@ -1,0 +1,85 @@
+uSerial loopback test
+Port: /dev/cu.usbmodemflip_Ivorzam1
+NOTE: RX and TX must be physically connected (loopback).
+
+=== Baudrate: 9600 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=9600] basic echo: OK
+  [baud=9600] text echo: OK  ("uSerial loopback demo..")
+  [baud=9600] sbuf echo: OK
+  close() done
+Result @ 9600: PASS
+
+=== Baudrate: 19200 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=19200] basic echo: OK
+  [baud=19200] text echo: OK  ("uSerial loopback demo..")
+  [baud=19200] sbuf echo: OK
+  close() done
+Result @ 19200: PASS
+
+=== Baudrate: 38400 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=38400] basic echo: OK
+  [baud=38400] text echo: OK  ("uSerial loopback demo..")
+  [baud=38400] sbuf echo: OK
+  close() done
+Result @ 38400: PASS
+
+=== Baudrate: 57600 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=57600] basic echo: OK
+  [baud=57600] text echo: OK  ("uSerial loopback demo..")
+  [baud=57600] sbuf echo: OK
+  close() done
+Result @ 57600: PASS
+
+=== Baudrate: 115200 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=115200] basic echo: OK
+  [baud=115200] text echo: OK  ("uSerial loopback demo..")
+  [baud=115200] sbuf echo: OK
+  close() done
+Result @ 115200: PASS
+
+=== Baudrate: 230400 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=230400] basic echo: OK
+  [baud=230400] text echo: OK  ("uSerial loopback demo..")
+  [baud=230400] sbuf echo: OK
+  close() done
+Result @ 230400: PASS
+
+=== Baudrate: 460800 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=460800] basic echo: OK
+  [baud=460800] text echo: OK  ("uSerial loopback demo..")
+  [baud=460800] sbuf echo: OK
+  close() done
+Result @ 460800: PASS
+
+=== Baudrate: 921600 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=921600] basic echo: OK
+  [baud=921600] text echo: OK  ("uSerial loopback demo..")
+  [baud=921600] sbuf echo: OK
+  close() done
+Result @ 921600: PASS
+
+=== Baudrate: 4000000 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=4000000] basic echo: OK
+  [baud=4000000] text echo: OK  ("uSerial loopback demo..")
+  [baud=4000000] sbuf echo: OK
+  close() done
+Result @ 4000000: PASS
+
+=== Baudrate: 420000 ===
+  isOpen()=true, isWritable()=true, isReadable()=false
+  [baud=420000] basic echo: OK
+  [baud=420000] text echo: OK  ("uSerial loopback demo..")
+  [baud=420000] sbuf echo: OK
+  close() done
+Result @ 420000: PASS
+
+Summary: 10/10 baudrates passed
