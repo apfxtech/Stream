@@ -40,7 +40,7 @@ static inline uint32_t millis()
 }
 #endif
 
-#include "streambuf.h"
+#include "utils/sbu.h"
 
 class uStream
 {
@@ -89,7 +89,7 @@ public:
         return index == length;
     }
 
-    inline bool readBuf(sbuf_t *dst)
+    inline bool readBuf(sbu_t *dst)
     {
         if (!dst || !dst->ptr || dst->ptr >= dst->end)
             return false;
@@ -98,7 +98,7 @@ public:
         if (bytes_available <= 0)
             return false;
 
-        size_t remaining = sbufBytesRemaining(dst);
+        size_t remaining = sbu_left(dst);
         if (remaining == 0)
             return false;
 
@@ -107,25 +107,25 @@ public:
 
         if (bytes_read > 0)
         {
-            sbufAdvance(dst, bytes_read);
+            sbu_skip(dst, bytes_read);
             return true;
         }
         return false;
     }
 
-    inline bool writeBuf(sbuf_t *src)
+    inline bool writeBuf(sbu_t *src)
     {
         if (!src || !src->ptr || src->ptr >= src->end)
             return false;
 
-        size_t bytes_to_write = sbufBytesRemaining(src);
+        size_t bytes_to_write = sbu_left(src);
         if (bytes_to_write == 0)
             return false;
 
         size_t bytes_written = write(src->ptr, bytes_to_write);
         if (bytes_written > 0)
         {
-            sbufAdvance(src, bytes_written);
+            sbu_skip(src, bytes_written);
             return bytes_written == bytes_to_write;
         }
         return false;

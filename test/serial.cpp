@@ -122,7 +122,7 @@ static bool echo_test_text(uSerial &ser, unsigned long baud, int timeout_ms)
 
 static bool echo_test_sbuf(uSerial &ser, unsigned long baud, int timeout_ms)
 {
-    // Демонстрация writeBuf/readBuf на sbuf_t.
+    // Демонстрация writeBuf/readBuf на sbu_t.
     // Схема:
     //   - Подготовим tx буфер в sbuf
     //   - writeBuf отправит всё и продвинет ptr до конца
@@ -130,8 +130,8 @@ static bool echo_test_sbuf(uSerial &ser, unsigned long baud, int timeout_ms)
     uint8_t tx_raw[] = {'S', 'B', 'U', 'F', '_', '0', '1', '2', '3', '4', 0x00, 0xFE, 0xEF};
     uint8_t rx_raw[sizeof(tx_raw)] = {0};
 
-    sbuf_t tx{};
-    sbuf_t rx{};
+    sbu_t tx{};
+    sbu_t rx{};
 
     tx.ptr = tx_raw;
     tx.end = tx_raw + sizeof(tx_raw);
@@ -150,7 +150,7 @@ static bool echo_test_sbuf(uSerial &ser, unsigned long baud, int timeout_ms)
 
     // Читать будем "порциями", демонстрируя readBuf (он читает сколько доступно и сколько осталось).
     uint32_t start = millis();
-    while (sbufBytesRemaining(&rx) > 0)
+    while (sbu_left(&rx) > 0)
     {
         if (ser.readBuf(&rx))
         {
@@ -166,13 +166,13 @@ static bool echo_test_sbuf(uSerial &ser, unsigned long baud, int timeout_ms)
         }
     }
 
-    bool full = (sbufBytesRemaining(&rx) == 0);
+    bool full = (sbu_left(&rx) == 0);
     if (!full)
     {
         std::printf(
             "  [baud=%lu] readBuf: timeout, remaining=%zu\n",
             baud,
-            static_cast<size_t>(sbufBytesRemaining(&rx)));
+            static_cast<size_t>(sbu_left(&rx)));
 
         hexdump("    partial RX: ", rx_raw, (size_t)(rx.ptr - rx_raw));
         return false;

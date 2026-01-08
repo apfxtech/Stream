@@ -23,8 +23,7 @@
  * SOFTWARE.
  */
 
-#include "streambuf.h"
-
+#include "utils/sbu.h"
 
 sbu_t *sbu_init(sbu_t *sbu, uint8_t *ptr, uint8_t *end)
 {

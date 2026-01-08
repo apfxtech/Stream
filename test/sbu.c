@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "streambuf.h"
+#include "utils/sbu.h"
 
 static ptrdiff_t POS(const uint8_t *base, const sbu_t *b) {
     return (ptrdiff_t)(sbu_const_ptr(b) - base);

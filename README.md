@@ -14,27 +14,26 @@ The repository also includes **standards and utilities** for low-level byte proc
 
 ### Stream
 ``` bash
-g++ -std=c++17 -O2 -Wall -Wextra -pedantic -I. streambuf.cpp serial.cpp test/serial.cpp -o test/serial_test
+g++ -std=c++17 -O2 -Wall -Wextra -pedantic -I. utils/sbu.c serial.cpp test/serial.cpp -o test/serial_test
 ```
 
 ``` bash 
-./serial_test /dev/ttyUSB0
+./test/serial_test /dev/ttyUSB0
 ```
 
 ``` bash 
-./serial_test /dev/cu.usbmodemflip_Ivorzam1 > test/serial_test.log
+./test/serial_test /dev/cu.usbmodemflip_Ivorzam1 > test/serial_test.log
 ```
 
-### SBU
+### Stream buffer utils (sbu)
 
 ``` bash 
-gcc -std=c99 -Wall -Wextra -O0 ./test/sbu_test.c streambuf.c -I. -o ./test/test_sbu
+gcc -std=c99 -Wall -Wextra -O0 ./test/sbu.c utils/sbu.c -I. -o ./test/test_sbu
 ```
 
 ``` bash 
 ./test/test_sbu  
 ```
-
 
 ## Branches
 
@@ -42,6 +41,8 @@ This repository uses two main branches:
 
 * **`main`** — stable code.
 * **`dev`** — active development.
+
+## Contributors
 
 <a href="https://github.com/apfxtech/Meshtastic/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=apfxtech/Meshtastic" />
