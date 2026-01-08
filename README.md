@@ -36,13 +36,13 @@ gcc -std=c99 -Wall -Wextra -O0 ./test/sbu_test.c streambuf.c -I. -o ./test/test_
 ```
 
 
-## ⚠️ Branches ⚠️
+## Branches
 
 This repository uses two main branches:
 
 * **`main`** — stable code.
 * **`dev`** — active development.
 
-* **MAJOR** — breaking API changes.
-* **MINOR** — API changes/additions with **full backward compatibility**.
-* **PATCH** — bug fixes/improvements without API changes.
+<a href="https://github.com/apfxtech/Meshtastic/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=apfxtech/Meshtastic" />
+</a>
